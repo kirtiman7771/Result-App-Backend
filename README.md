@@ -1,37 +1,32 @@
 # ResultApp Backend
 
-This project is a Spring Boot application built using **Spring Boot 3.3.0** and **Java 17**. It provides REST APIs for managing student results with role-based authentication for Students and Teachers.
+This project is a Spring Boot application built using Java 17 and Spring Boot 3.3.0. It provides REST APIs for managing student results with role-based authentication for Students and Teachers.
 
 ---
 
-## 🚀 Features
+## Features
 
-* User Registration (Student / Teacher)
+* User registration (Student / Teacher)
 * Role-based authentication using Spring Security (Basic Auth)
-* Teacher can:
-
-  * Add or update student results
-* Student can:
-
-  * View their own results
-* JPA + Hibernate integration with MySQL
-* Global exception handling
-* DTO-based clean architecture
+* Teacher can add or update student results
+* Student can view their own results
+* JPA and Hibernate with MySQL
+* DTO-based structure
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * Java 17
-* Spring Boot 3.3.0
+* Spring Boot
 * Spring Security
-* Spring Data JPA (Hibernate)
+* Spring Data JPA
 * MySQL
 * Lombok
 
 ---
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
 ### 1. Clone the repository
 
@@ -59,13 +54,11 @@ server.port=8081
 
 ### 3. Run the Application
 
-Using IntelliJ or CLI:
-
 ```bash
 mvn spring-boot:run
 ```
 
-Once started, backend runs on:
+Backend will run on:
 
 ```
 http://localhost:8081
@@ -73,28 +66,25 @@ http://localhost:8081
 
 ---
 
-## 🔐 Authentication
+## Authentication
 
-This project uses **Basic Authentication**.
+Basic Authentication is used.
 
-Use Postman or frontend with:
-
-* Username: your registered username
-* Password: your password
+Provide username and password in Postman or frontend requests.
 
 ---
 
-## 📌 API Endpoints
+## API Endpoints
 
-### 🔹 Auth APIs
+### Auth
 
-#### Register User
+**Register User**
 
 ```
 POST /api/auth/register
 ```
 
-Sample Request:
+Sample request:
 
 ```json
 {
@@ -109,15 +99,15 @@ Sample Request:
 
 ---
 
-### 🔹 Teacher APIs (ROLE_TEACHER)
+### Teacher APIs (ROLE_TEACHER)
 
-#### Add / Update Result
+**Add or Update Result**
 
 ```
 POST /api/teachers/results
 ```
 
-Request Body:
+Request body:
 
 ```json
 {
@@ -129,9 +119,9 @@ Request Body:
 
 ---
 
-### 🔹 Student APIs (ROLE_STUDENT)
+### Student APIs (ROLE_STUDENT)
 
-#### Get My Results
+**Get Results**
 
 ```
 GET /api/students/results
@@ -139,7 +129,7 @@ GET /api/students/results
 
 ---
 
-## 🗄️ Database Tables
+## Database Tables
 
 * users
 * courses
@@ -147,7 +137,7 @@ GET /api/students/results
 
 ---
 
-### Insert Sample Courses
+## Insert Sample Courses
 
 ```sql
 INSERT INTO courses (course_code, course_name) VALUES ('MATH101', 'Mathematics');
@@ -157,44 +147,7 @@ INSERT INTO courses (course_code, course_name) VALUES ('CHEM101', 'Chemistry');
 
 ---
 
-## 🧪 Testing APIs
-
-Use **Postman**:
-
-1. Register Student & Teacher
-2. Use Basic Auth for secured APIs
-3. Teacher → add result
-4. Student → view result
-
----
-
-## ⚠️ Common Issues
-
-### 1. 401 Unauthorized
-
-* Missing Basic Auth in request
-* Wrong username/password
-
----
-
-### 2. Database Connection Error
-
-* Check MySQL is running
-* Verify DB credentials
-
----
-
-### 3. Public Key Retrieval Error
-
-Already fixed using:
-
-```properties
-allowPublicKeyRetrieval=true
-```
-
----
-
-## 📦 Build
+## Build
 
 ```bash
 mvn clean install
@@ -202,7 +155,7 @@ mvn clean install
 
 ---
 
-## ▶️ Run Jar
+## Run Jar
 
 ```bash
 java -jar target/resultapp.jar
@@ -210,17 +163,6 @@ java -jar target/resultapp.jar
 
 ---
 
-## 📚 Future Improvements
-
-* JWT Authentication
-* Role-based UI (Angular integration)
-* Pagination & filtering
-* Admin dashboard
-
----
-
-## 👨‍💻 Author
+## Author
 
 Kirtiman Singh
-
----
