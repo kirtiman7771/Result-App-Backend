@@ -162,7 +162,3 @@ java -jar target/resultapp.jar
 ```
 
 ---
-
-## Author
-
-Kirtiman Singh
